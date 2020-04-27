@@ -1,45 +1,31 @@
 import React from 'react';
+import {Route} from 'react-router-dom';
 
-import { Cards, CountryPicker, Chart, Map } from './components';
-import { fetchData } from './api/';
+import Home from './components/';
+import Graph from './Graph/Graph'
+import BeSafe from './BeSafe/BeSafe'
+import CssBaseline from '@material-ui/core/CssBaseline';
 import styles from './App.module.css';
 
 
-
-class App extends React.Component {
-  state = {
-    data: {},
-    country: '',
+function App() {
+  return (
     
-  }
+    <div  style={{
+      backgroundColor: 'rgba(255,236,34,0.7)',
+      width: '100vw',
+      height: '100vh'
+    }}>
 
-  async componentDidMount() {
-    const data = await fetchData();
-
-    this.setState({ data });
-  }
-
-  handleCountryChange = async (country) => {
-    const data = await fetchData(country);
-
-    this.setState({ data, country: country });
-  }
-
-  render() {
-    const { data, country } = this.state;
-
-    return (
-      <div className={styles.container}>
-        <div><h1>COVID-19 Tracker</h1></div>
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country} /> 
-        <Cards data={data} />
-        <Map />
+      <CssBaseline />
+      <Route exact path ="/" component ={Home} />
+      <Route path ="/graph" component ={Graph} />
+      <Route path ="/safe" component ={BeSafe} />
 
 
-      </div>
-    );
-  }
+
+    </div>
+  )
 }
 
 export default App;

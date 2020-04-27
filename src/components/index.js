@@ -1,6 +1,16 @@
-export { default as Chart } from './Chart/Chart';
-export { default as CountryPicker } from './CountryPicker/CountryPicker';
-export { default as Cards } from './Cards/Cards';
-export { default as Map } from './Map/Map';
+import React, { Component } from 'react'
+import Navbar from './Navbar';
+import Header from './Header';
+
+ const Home = () =>{
+    return (
+        <div>
+            <Navbar />
+            <Header />
+        </div>
+    )
+}
+
+export default Home;
 
 
