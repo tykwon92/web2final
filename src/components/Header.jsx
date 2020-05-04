@@ -9,11 +9,12 @@ import {
 import Typed from 'react-typed';
 import zIndex from '@material-ui/core/styles/zIndex';
 import avatar from './Virus.png';
+import Particles from "react-particles-js";
 
 
 const useStyles = makeStyles(theme => ({
     title: {
-        color: "#387780",
+        color: "#ffffff",
         marginBottom: "3rem",
     },
     name: {
@@ -35,13 +36,32 @@ const useStyles = makeStyles(theme => ({
         display: "block",
         margin: ".5rem auto",
     },
+    particlesCanva: {
+        position: "absolute",
+        transform: "translate(-50%, 0%)",
+    }
 }));
 
 const Header = () => {
     const classes = useStyles();
     return (
-        <Box className={classes.typedContainer}>
-            <Typography className={classes.title} variant="h1">
+        
+        <Box className={classes.typedContainer} >
+ <Particles
+            canvasClassName={classes.particlesCanva}
+            params ={{
+                particles :{
+                    number :{
+                        value :300
+                    },
+                    color:{
+                        value : "#000"
+                    },
+                   
+
+                }
+            }} />
+            <Typography className={classes.title} style={{ color: "#FAD0C9", fontFamily: 'Grand Hotel', fontSize: '300px' }} variant="h1">
                 <Typed
                     strings={['#Stay Home', "#Stay Safe", '#Save Lives']}
                     typeSpeed={60}
@@ -49,15 +69,8 @@ const Header = () => {
                     loop
                 />
             </Typography>
-            <Avatar className={classes.avatar} src={avatar} alt="COVID-19" />
-            <Typography className={classes.name} variant="h2">
-                COVID-19
-        </Typography>
 
-            <Typography className={classes.sub} variant="h5">
-                Things You Need To Know
-            </Typography>
-
+           
         </Box>
     )
 }

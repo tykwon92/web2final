@@ -28,18 +28,18 @@ import {
 const useStyles = makeStyles(theme=> ({
     menuSliderContainer: {
         width: 250,
-        background: "#387780",
-        height: "100%"
+        background: "#6E6E6D",
+        height: "100%",
     },
     avatar: {
         display: "block",
-        margin: ".5rem auto",
-        width: theme.spacing(20),
-        height: theme.spacing(20)
+        margin: "1rem auto",
+        width: theme.spacing(15),
+        height: theme.spacing(15)
 
     },
     listItem: {
-        color: "#FFEC22",
+        color: "#FAD0C9",
     }
 }));
 
@@ -91,7 +91,7 @@ const Navbar = () => {
                 {menuItems.map((lsItem, key) => (
                     <ListItem button key={key} component={Link} to={lsItem.listPath}>
                         <ListItemIcon className={classes.listItem} >{lsItem.listIcon}</ListItemIcon>
-                        <ListItemText className={classes.listItem} primary={lsItem.listText} />
+                        <ListItemText  className={classes.listItem} primary={lsItem.listText} />
                     </ListItem>
                 ))}
             </List>
@@ -103,17 +103,20 @@ const Navbar = () => {
 
 
             <Box component="nav">
-                <AppBar position="static" style={{ background: "#ff65b8",width:"100vw" }}>
+                <AppBar position="static" style={{ background: "#6E6E6D",width:"100vw" }}>
                     <Toolbar>
                         <IconButton onClick={toggleSlider("right", true)}>
-                            <Menu style={{ color: "#FFEC22" }} />
+                            <Menu style={{ color: "#FAD0C9" }} />
                         </IconButton>
+                        <Typography variant="h4" style={{color:"#FAD0C9", fontFamily: 'Anton'}}>
+        Covid-19 Tracker
+                        </Typography>
                         <MobilRightMenuSlider
-                            anchor="right"
+                            anchor="left"
                             open={state.right}
-                            onClose = {toggleSlider("right",false)}
+                            onClose = {toggleSlider("lieft",false)}
                         >
-                            {sideList("right")}
+                            {sideList("left")}
                         </MobilRightMenuSlider>
                     </Toolbar>
                 </AppBar>
