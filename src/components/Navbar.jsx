@@ -49,6 +49,12 @@ const menuItems = [
         listText: "Home",
         listpath: "/"
 
+    }, 
+    {
+        listIcon: <ShowChart />,
+        listText: "Graph",
+        listPath: "/graph"
+
     },
     {
         listIcon: <Info />,
@@ -57,12 +63,7 @@ const menuItems = [
 
 
     },
-    {
-        listIcon: <ShowChart />,
-        listText: "Graph",
-        listPath: "/graph"
-
-    },
+   
     {
         listIcon: <ContactMail />,
         listText: "Survey",
