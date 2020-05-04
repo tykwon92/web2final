@@ -65,7 +65,7 @@ const menuItems = [
     },
     {
         listIcon: <ContactMail />,
-        listText: "Contact"
+        listText: "Survey"
 
     }
 ]

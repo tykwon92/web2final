@@ -22,7 +22,7 @@ function App() {
       <Route exact path ="/" component ={Home} />
       <Route path ="/graph" component ={Graph} />
       <Route path ="/safe" component ={BeSafe} />
-      <Route path ="/contact" component ={Surveyjs} />
+      <Route path ="/Survey" component ={Surveyjs} />
       
 
 
